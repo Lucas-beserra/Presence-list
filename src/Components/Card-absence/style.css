@@ -1,0 +1,14 @@
+.Card-absence {
+    height: 10vh;
+    width: 65vw;
+    background-color: #8B0000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
