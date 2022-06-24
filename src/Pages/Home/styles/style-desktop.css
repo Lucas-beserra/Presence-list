@@ -26,12 +26,12 @@
     
     .Home input {
         width: 80vw;
-        height: 8vh;
+        height: 70px;
         background-color: #1c1c1c;
         color: #fff;
         margin-bottom: 1.3rem;
         font-size: 2rem;
-        border: 5px solid #fff;
+        border: 2px solid #fff;
         border-radius: 10px;
         padding: 0.5rem;
     }
@@ -44,7 +44,7 @@
         background-color: #1c1c1c;
         margin-bottom: 2rem;
         font-size: 1.7rem;
-        border: 5px solid #8B0000;
+        border: 3px solid #8B0000;
         border-radius: 10px;
         padding: 0.5rem;
         display: flex;
@@ -61,7 +61,7 @@
     
     #button-presence {
         background-color: #1c1c1c;
-        border: 4px solid #7CFC00;
+        border: 2px solid #7CFC00;
 
     }
     
