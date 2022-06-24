@@ -1,0 +1,66 @@
+@media screen and (min-width: 700px) {
+
+    .Home {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+       margin-top: 3vh;
+    }
+    
+    .Home h1, h3 {
+        color: #fff;
+        margin: 2rem auto;
+        font-size: 2.3rem;
+    }
+    
+    .Home input {
+        width: 80vw;
+        height: 8vh;
+        background-color: #1c1c1c;
+        color: #fff;
+        margin-bottom: 1.3rem;
+        font-size: 2rem;
+        border: 5px solid #fff;
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+    
+    .Home button {
+        width: 30vw;
+        height: 8vh;
+        color: #fff;
+        cursor: pointer;
+        background-color: #1c1c1c;
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+        border: 5px solid #8B0000;
+        border-radius: 10px;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80vw;
+    }
+    
+    #button-presence {
+        background-color: #1c1c1c;
+        border: 4px solid #7CFC00;
+
+    }
+    
+    hr {
+        height: 7vh;
+        width: 1vw;
+        border-radius: 5px;
+        border-right: 1px solid #8B0000;
+        border-left: 1px solid #7CFC00;
+        margin-bottom: 1.8rem;
+    }
+    }

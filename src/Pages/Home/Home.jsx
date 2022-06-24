@@ -1,5 +1,7 @@
 import React, { useState} from 'react'
-import './style.css'
+import './styles/global.css'
+import './styles/style-mobile.css'
+import './styles/style-desktop.css'
 import { CardPresence } from '../../Components/Card-presence'
 import { CardAbsence } from '../../Components/Card-absence'
 
@@ -37,13 +39,7 @@ export function Home() {
   
   return (
     <div className="Home">
-      {/* <header>
-        <div className="perfil-informacion">
-        <p>Lucas</p>
-        <img src="https://github.com/Lucas-beserra.png" alt="foto de perfil"></img>
-        </div>
-      </header> */}
-      <h1>Lista de presença:</h1>
+      <h1>Lista de presença</h1>
 
       <input 
         type="text" 
@@ -57,6 +53,8 @@ export function Home() {
           onClick={handleAddPresentStudent}
           >Presente</button>
 
+        <hr></hr>
+        <hr></hr>
         <hr></hr>
 
         <button 
