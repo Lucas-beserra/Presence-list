@@ -1,5 +1,5 @@
 .Card-absence {
-    height: 10vh;
+    height: 75px;
     width: 80vw;
     color: #fff;
     display: flex;
@@ -15,7 +15,7 @@
 @media screen and (max-width: 700px) {
 
 .Card-absence {
-    height: 10vh;
+    height: 75px;
     width: 80vw;
     color: #fff;
     display: flex;

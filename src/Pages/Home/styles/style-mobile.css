@@ -20,7 +20,7 @@
     
     .Home input {
         width: 80vw;
-        height: 8vh;
+        height: 70px;
         background-color: #1c1c1c;
         color: #fff;
         margin-bottom: 1.3rem;
@@ -32,7 +32,7 @@
     
     .Home button {
         width: 30vw;
-        height: 8vh;
+        height: 60px;
         color: #fff;
         cursor: pointer;
         background-color: #1c1c1c;
