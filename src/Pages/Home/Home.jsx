@@ -10,6 +10,8 @@ export function Home() {
   const [studentName, setStudentName] = useState()
   const [presentStudents, setPresentStudents] = useState([])
   const [absentStudents, setAbsentStudents] = useState([])
+  const [presentTotal, setPresentTotal] = useState(0)
+  const [absentTotal, setAbsentTotal] = useState(0)
 
   function handleAddPresentStudent() {
     const newStudent = {
@@ -22,6 +24,7 @@ export function Home() {
     }
     
     setPresentStudents(prevState => [...prevState, newStudent])
+    setPresentTotal( presentTotal + 1)
   }
 
   function handleAddAbsentStudent() {
@@ -35,6 +38,7 @@ export function Home() {
     }
     
     setAbsentStudents(prevState => [...prevState, newStudent])
+    setAbsentTotal(absentTotal + 1)
   }
   
   return (
@@ -64,7 +68,10 @@ export function Home() {
           >Ausente</button>
       </div>
 
-      <h3>Presentes:</h3>
+      <div className="total">
+        <h3>Presentes: {presentTotal}</h3>
+        <h3>Ausentes: {absentTotal}</h3>
+      </div>
 
       {presentStudents.map(student => (
         <CardPresence 
@@ -74,8 +81,6 @@ export function Home() {
           )
         )
       }
-
-      <h3>Ausentes:</h3>
 
       {absentStudents.map(student => (
         <CardAbsence 

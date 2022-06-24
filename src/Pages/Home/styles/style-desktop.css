@@ -8,10 +8,20 @@
        margin-top: 3vh;
     }
     
-    .Home h1, h3 {
+    .Home h1 {
         color: #fff;
-        margin: 2rem auto;
+        margin-bottom: 1.5rem;
         font-size: 2.3rem;
+    }
+
+    .total {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 2.5rem auto;
+        font-size: 1.5rem;
+        color: #fff;
+
     }
     
     .Home input {

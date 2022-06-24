@@ -5,17 +5,22 @@
        align-items: center;
        justify-content: center;
        flex-direction: column;
-       //margin-top: 0;
     }
     
-    .Home h1, h3 {
+    .Home h1 {
         color: #fff;
-        margin: 2rem auto;
+        margin-bottom: 1rem;
         font-size: 1.7rem;
     }
 
-    .Home h3 {
-        font-size: 1.5rem;
+    .total {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 2.5rem auto;
+        font-size: 1.3rem;
+        color: #fff;
+
     }
     
     .Home input {
