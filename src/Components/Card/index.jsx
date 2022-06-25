@@ -1,8 +1,8 @@
 import './style.css'
 
-export function CardAbsence({user, dateTime}) {
+export function Card({user, dateTime, present}) {
     return (
-        <div className="Card-absence">
+        <div className={present ? "Card-presence" : "Card-absence"}>
             <strong>{user}</strong>
             <strong>{dateTime}</strong>
         </div>

@@ -1,97 +1,70 @@
-import React, { useState} from 'react'
-import './styles/global.css'
-import './styles/style-mobile.css'
-import './styles/style-desktop.css'
-import { CardPresence } from '../../Components/Card-presence'
-import { CardAbsence } from '../../Components/Card-absence'
+import React, { useState } from "react";
+import "./styles/global.css";
+import "./styles/style-mobile.css";
+import "./styles/style-desktop.css";
+import { Card } from "../../Components/Card";
+
 
 export function Home() {
+	const [studentName, setStudentName] = useState();
+	const [students, setStudents] = useState([]);
+	const [presentTotal, setPresentTotal] = useState(0);
+	const [absentTotal, setAbsentTotal] = useState(0);
 
-  const [studentName, setStudentName] = useState()
-  const [presentStudents, setPresentStudents] = useState([])
-  const [absentStudents, setAbsentStudents] = useState([])
-  const [presentTotal, setPresentTotal] = useState(0)
-  const [absentTotal, setAbsentTotal] = useState(0)
-
-  function handleAddPresentStudent() {
-    const newStudent = {
-      name: studentName,
+  function studentFactory(name, present) {
+    return {
+      name: name,
       time: new Date().toLocaleDateString("pt-br", {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-      })
-    }
-    
-    setPresentStudents(prevState => [...prevState, newStudent])
-    setPresentTotal( presentTotal + 1)
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      }),
+      present: present,
+    };
   }
 
-  function handleAddAbsentStudent() {
-    const newStudent = {
-      name: studentName,
-      time: new Date().toLocaleDateString("pt-br", {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-      })
-    }
-    
-    setAbsentStudents(prevState => [...prevState, newStudent])
-    setAbsentTotal(absentTotal + 1)
-  }
-  
-  return (
-    <div className="Home">
-      <h1>Lista de presença</h1>
+	function handleAddPresentStudent() {
+		const newStudent = studentFactory(studentName, true);
 
-      <input 
-        type="text" 
-        placeholder="Nome do aluno"
-        onChange={e => setStudentName(e.target.value)}
-        ></input>
-      <div className="buttons">
-        <button 
-          type="button"
-          id="button-presence"
-          onClick={handleAddPresentStudent}
-          >Presente</button>
+		setStudents((prevState) => [newStudent, ...prevState]);
+		setPresentTotal(presentTotal + 1);
+	}
 
-        <hr></hr>
-        <hr></hr>
-        <hr></hr>
+	function handleAddAbsentStudent() {
+		const newStudent = studentFactory(studentName, false);
 
-        <button 
-          type="button"
-          id="button-absence"
-          onClick={handleAddAbsentStudent}
-          >Ausente</button>
-      </div>
+		setStudents((prevState) => [newStudent, ...prevState]);
+		setAbsentTotal(absentTotal + 1);
+	}
 
-      <div className="total">
-        <h3>Presentes: {presentTotal}</h3>
-        <h3>Ausentes: {absentTotal}</h3>
-      </div>
+	return (
+		<div className="Home">
+			<h1>Lista de presença</h1>
 
-      {presentStudents.map(student => (
-        <CardPresence 
-          key={student.time} 
-          user={student.name} 
-          dateTime={student.time}/>
-          )
-        )
-      }
+			<input type="text" placeholder="Nome do aluno" onChange={(e) => setStudentName(e.target.value)}></input>
+			<div className="buttons">
+				<button type="button" id="button-presence" onClick={handleAddPresentStudent}>
+					Presente
+				</button>
 
-      {absentStudents.map(student => (
-        <CardAbsence 
-          key={student.time} 
-          user={student.name} 
-          dateTime={student.time}/>
-          )
-        )
-      }
+				<button type="button" id="button-absence" onClick={handleAddAbsentStudent}>
+					Ausente
+				</button>
+			</div>
 
-    </div>
-  )
+			<div className="total">
+				<h3>Presentes: {presentTotal}</h3>
+				<h3>Ausentes: {absentTotal}</h3>
+			</div>
+
+			{students.map((student) => (
+				<Card
+					key={student.time}
+					user={student.name}
+					dateTime={student.time}
+					present={student.present}
+				/>
+			))}
+		</div>
+	);
 }
-
